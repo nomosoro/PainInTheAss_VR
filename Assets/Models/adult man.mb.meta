@@ -1,0 +1,166 @@
+fileFormatVersion: 2
+guid: 9cdaf93e8e8dfa84a920f07d7ac53b46
+timeCreated: 1519636980
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: BODY
+    100004: FAT_GUY
+    100006: fat_guy:BODY
+    100008: fat_guy:group1
+    100010: fat_guy:HEAD
+    100012: fat_guy:L_BIG_ARM
+    100014: fat_guy:L_BIG_LEG
+    100016: fat_guy:L_HAND
+    100018: fat_guy:L_SHOE
+    100020: fat_guy:L_SMALL_ARM
+    100022: fat_guy:L_SMALL_LEG
+    100024: fat_guy:transform1
+    100026: fat_guy:transform2
+    100028: fat_guy:transform3
+    100030: fat_guy:transform4
+    100032: fat_guy:transform5
+    100034: fat_guy:transform6
+    100036: fat_guy:transform7
+    100038: fat_guy:transform8
+    100040: group1
+    100042: HEAD
+    100044: L_BIG_ARM
+    100046: L_BIG_LEG
+    100048: L_HAND
+    100050: L_SHOE
+    100052: L_SMALL_ARM
+    100054: L_SMALL_LEG
+    100056: transform1
+    100058: transform2
+    100060: transform3
+    100062: transform4
+    100064: transform5
+    100066: transform6
+    100068: transform7
+    100070: transform8
+    400000: //RootNode
+    400002: BODY
+    400004: FAT_GUY
+    400006: fat_guy:BODY
+    400008: fat_guy:group1
+    400010: fat_guy:HEAD
+    400012: fat_guy:L_BIG_ARM
+    400014: fat_guy:L_BIG_LEG
+    400016: fat_guy:L_HAND
+    400018: fat_guy:L_SHOE
+    400020: fat_guy:L_SMALL_ARM
+    400022: fat_guy:L_SMALL_LEG
+    400024: fat_guy:transform1
+    400026: fat_guy:transform2
+    400028: fat_guy:transform3
+    400030: fat_guy:transform4
+    400032: fat_guy:transform5
+    400034: fat_guy:transform6
+    400036: fat_guy:transform7
+    400038: fat_guy:transform8
+    400040: group1
+    400042: HEAD
+    400044: L_BIG_ARM
+    400046: L_BIG_LEG
+    400048: L_HAND
+    400050: L_SHOE
+    400052: L_SMALL_ARM
+    400054: L_SMALL_LEG
+    400056: transform1
+    400058: transform2
+    400060: transform3
+    400062: transform4
+    400064: transform5
+    400066: transform6
+    400068: transform7
+    400070: transform8
+    2300000: FAT_GUY
+    3300000: FAT_GUY
+    4300000: FAT_GUY
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 43581b09c89ecbd47a74923903a1618a, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
