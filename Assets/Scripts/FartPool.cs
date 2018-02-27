@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class FartPool : MonoBehaviour {
 	//It controls everything relates to the fart pool.
-	private float gasAmount;
+
+	private float gasAmount = 0f;
 	private float gasMaxAmount = 100;
-	private float gasMinAmount = 0;
+	private float gasMinAmount = 0f;
+	public float GasAmount{get { return gasAmount;}}
+	public float GasMaxAmount{get { return gasMaxAmount;}}
+	public float GasMinAmount{get { return gasMinAmount;}}
 	//Regeneration rate for the gas per second
 
 	#region Singleton 
@@ -40,12 +44,13 @@ public class FartPool : MonoBehaviour {
 	Coroutine releaseCoroutine;
 	void Start(){
 		gasAmount = gasMinAmount;
+		StartRegeneration ();
 	}
 
 
 	public void StartRelease(){
 		if (releaseCoroutine == null) {
-			releaseCoroutine = StartCoroutine (RegenerateGas());
+			releaseCoroutine = StartCoroutine (ReleaseGas());
 		}
 	}
 
@@ -64,6 +69,7 @@ public class FartPool : MonoBehaviour {
 
 	public void StopRegeneration(){
 		if (regenCoroutine != null) {
+			Debug.Log ("regen Routine stopped.");
 			StopCoroutine (regenCoroutine);
 			regenCoroutine = null;
 		}
@@ -74,12 +80,19 @@ public class FartPool : MonoBehaviour {
 			gasAmount += _gasRegenRate * Time.deltaTime;
 			yield return null;
 		}
+	//after finish regeneration
+		gasAmount = gasMaxAmount;
+		regenCoroutine = null;
 	}
 	IEnumerator ReleaseGas(){
 		while(gasAmount>gasMinAmount){
+			Debug.Log ("Release fart with rate of " + _gasReleaseRate);
 			gasAmount -= _gasReleaseRate * Time.deltaTime;
 			yield return null;
 		}
+		//after finish release
+		gasAmount = gasMinAmount;
+		releaseCoroutine = null;
 	}
 
 }

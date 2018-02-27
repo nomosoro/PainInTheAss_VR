@@ -26,10 +26,12 @@ public class FartEmitter : MonoBehaviour {
 		}
 
 		if (controller.GetPressDown (triggerButton)&&fartClips!=null) {
+			Debug.Log ("Detected a trigger press down, about to emit fart.");
 			PlayFartSound ();
 			EmitFart ();
 		}
 		if (controller.GetPressUp (triggerButton)) {
+			Debug.Log ("Detected a trigger press up, about to end emit fart.");
 			EndEmittingFart ();
 		}
 	}
@@ -39,14 +41,15 @@ public class FartEmitter : MonoBehaviour {
 		audioSource.Play ();
 	}
 	void EmitFart(){
+		fartPool.GasReleaseRate += emitRate;
 		fartPool.StopRegeneration ();
 		fartPool.StartRelease ();
-		fartPool.GasReleaseRate += emitRate;
 	}
 
 	void EndEmittingFart(){
-		fartPool.GasRegenRate -= emitRate;
-		if (fartPool.GasRegenRate <= 0) {
+		fartPool.GasReleaseRate -= emitRate;
+		if (fartPool.GasReleaseRate <= 0) {
+			fartPool.GasReleaseRate = 0;
 			fartPool.StopRelease ();
 			fartPool.StartRegeneration ();
 		}
