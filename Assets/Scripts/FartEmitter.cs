@@ -9,7 +9,7 @@ public class FartEmitter : MonoBehaviour {
 	private SteamVR_TrackedObject trackedObj;
 	private AudioSource audioSource;
 	public AudioClip[] fartClips;
-	public float emitRate = 10.0f;
+	public static float EmitRate = 10.0f;
 	FartPool fartPool;
 	// Use this for initialization
 	void Start () {
@@ -41,13 +41,13 @@ public class FartEmitter : MonoBehaviour {
 		audioSource.Play ();
 	}
 	void EmitFart(){
-		fartPool.GasReleaseRate += emitRate;
+		fartPool.GasReleaseRate += EmitRate;
 		fartPool.StopRegeneration ();
 		fartPool.StartRelease ();
 	}
 
 	void EndEmittingFart(){
-		fartPool.GasReleaseRate -= emitRate;
+		fartPool.GasReleaseRate -= EmitRate;
 		if (fartPool.GasReleaseRate <= 0) {
 			fartPool.GasReleaseRate = 0;
 			fartPool.StopRelease ();
