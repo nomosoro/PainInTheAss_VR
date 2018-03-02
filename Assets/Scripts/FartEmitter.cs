@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utilities;
 [RequireComponent(typeof(SteamVR_TrackedObject))]
 public class FartEmitter : MonoBehaviour {
 	private Valve.VR.EVRButtonId gripButton = Valve.VR.EVRButtonId.k_EButton_Grip;
@@ -37,7 +38,7 @@ public class FartEmitter : MonoBehaviour {
 	}
 
 	void PlayFartSound(){
-		audioSource.clip = fartClips[new System.Random().Next(0,fartClips.Length-1)];
+		audioSource.clip = ArrayHelpers.GetRandomValue<AudioClip> (fartClips);
 		audioSource.Play ();
 	}
 	void EmitFart(){

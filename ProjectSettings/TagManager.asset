@@ -8,6 +8,7 @@ TagManager:
   - projectile
   - FartAgent
   - PassengerGoalPoint
+  - PassengerSpawnPoint
   layers:
   - Default
   - TransparentFX

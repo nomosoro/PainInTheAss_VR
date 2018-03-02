@@ -22,15 +22,7 @@ public class FartPool : MonoBehaviour {
 	}
 	#endregion
 
-	private float _gasRegenRate = 5f;
-	public float GasRegenRate{
-		get{ 
-			return _gasRegenRate;
-		}
-		set{ 
-			_gasRegenRate = value;
-		}
-	}
+	public float GasRegenRate = 5f;
 	private float _gasReleaseRate = 0f;
 	public float GasReleaseRate{
 		get{ 
@@ -77,7 +69,7 @@ public class FartPool : MonoBehaviour {
 
 	IEnumerator RegenerateGas(){
 		while(gasAmount<gasMaxAmount){
-			gasAmount += _gasRegenRate * Time.deltaTime;
+			gasAmount += GasRegenRate * Time.deltaTime;
 			yield return null;
 		}
 	//after finish regeneration
@@ -88,6 +80,7 @@ public class FartPool : MonoBehaviour {
 		while(gasAmount>gasMinAmount){
 			Debug.Log ("Release fart with rate of " + _gasReleaseRate);
 			gasAmount -= _gasReleaseRate * Time.deltaTime;
+			GameManager.Instance.CurrentScore += _gasReleaseRate * Time.deltaTime;
 			yield return null;
 		}
 		//after finish release

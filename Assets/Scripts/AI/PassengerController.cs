@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Utilities;
 [RequireComponent(typeof(NavMeshAgent))]
 public class PassengerController : MonoBehaviour {
 
@@ -9,7 +10,7 @@ public class PassengerController : MonoBehaviour {
 	public PassengerGoalPoint goalPoint;
 	Coroutine DetectionRaisingCoroutine;
 	Coroutine DetectionDroppingCoroutine;
-
+	Coroutine HaltCoroutinue;
 	float maxDetectionLevel = 100.0f;
 	float minDetectionLevel = 0f;
 	float detectionLevel = 0f;
@@ -25,8 +26,12 @@ public class PassengerController : MonoBehaviour {
 	}
 
 	void Start () {
+		if (goalPoint == null) {
+			goalPoint = ArrayHelpers.GetRandomValue<GameObject>(GameObject.FindGameObjectsWithTag ("PassengerGoalPoint")).transform.GetComponent<PassengerGoalPoint>();
+		}
 		agent = GetComponent<NavMeshAgent> ();
 		agent.SetDestination (goalPoint.transform.position);
+
 	}
 	
 	// Update is called once per frame
@@ -48,7 +53,9 @@ public class PassengerController : MonoBehaviour {
 	void OnTriggerExit(Collider collider){
 		if (collider.tag == "FartAgent") {
 			StopDetection ();
-			StartCoroutine (HaltForSeconds(3f));
+			if (HaltCoroutinue == null) {
+				HaltCoroutinue = StartCoroutine (HaltForSeconds(3f));
+			}
 		}
 	}
 
@@ -72,6 +79,7 @@ public class PassengerController : MonoBehaviour {
 		agent.isStopped = true;
 		yield return new WaitForSeconds (haltTime);
 		agent.isStopped = false;
+		HaltCoroutinue = null;
 	}
 	IEnumerator RaiseDetectionCoroutine(){
 		while(detectionLevel < maxDetectionLevel){

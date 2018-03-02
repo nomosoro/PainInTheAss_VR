@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(FartPool))]
 public class FartAgent : MonoBehaviour {
 	FartPool fartPool;
-	float fartShrinkRate = .5f;
-	float fartExpandRate = 1;
+	public float fartShrinkRate = .5f;
+	public float fartExpandRate = 1;
 	Vector3 FartZoneMaxScale = new Vector3(10,10,10);
 
 	void Start(){
